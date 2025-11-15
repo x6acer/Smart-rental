@@ -1,0 +1,919 @@
+
+=== 2025-10-31 18:08:05 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-10-31 18:08:23 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-10-31 18:08:28 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-10-31 18:08:43 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-10-31 18:10:09 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-10-31 18:10:33 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-10-31 18:11:46 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-10-31 18:12:08 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-10-31 18:12:58 - New Order Processing ===
+Session customer_id: 2
+Checking/creating user record...
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status) VALUES (?,?,?)
+Fields: user_id, total_amount, status
+Values: 2, 550, pending
+New order ID: 11
+
+=== 2025-10-31 18:13:03 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 4
+
+=== 2025-10-31 18:27:57 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 4
+
+=== 2025-10-31 18:29:19 - New Order Processing ===
+Session customer_id: 2
+Checking/creating user record...
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status) VALUES (?,?,?)
+Fields: user_id, total_amount, status
+Values: 2, 550, pending
+New order ID: 12
+
+=== 2025-10-31 18:29:24 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 5
+
+=== 2025-10-31 18:36:50 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 5
+
+=== 2025-10-31 20:56:03 ===
+Session customer_id: 2
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 5
+
+=== 2025-10-31 20:57:46 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 0
+Total orders in database: 9
+Sample order columns: id, user_id, total_amount, status, order_date
+Sample order user_id: 1
+Sample order customer_id: NULL
+
+=== 2025-10-31 20:59:11 - New Order Processing ===
+Session customer_id: 4
+Checking/creating user record...
+User not found in users table, creating...
+Customer data found: yes
+
+=== 2025-10-31 21:03:54 - New Order Processing ===
+Session customer_id: 4
+Checking/creating user record...
+User not found in users table, creating...
+Customer data found: yes
+
+=== 2025-10-31 21:06:25 - New Order Processing ===
+Session customer_id: 4
+Checking/creating user record...
+User not found in users table, creating...
+Customer data found: yes
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status) VALUES (?,?,?)
+Fields: user_id, total_amount, status
+Values: 4, 2300, pending
+New order ID: 13
+
+=== 2025-11-03 12:09:21 - New Order Processing ===
+Session customer_id: 5
+Checking/creating user record...
+User not found in users table, creating...
+Customer data found: yes
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status) VALUES (?,?,?)
+Fields: user_id, total_amount, status
+Values: 5, 2660, pending
+New order ID: 14
+
+=== 2025-11-03 12:10:37 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 1
+
+=== 2025-11-03 12:15:26 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 1
+
+=== 2025-11-03 12:16:05 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 1
+
+=== 2025-11-03 12:16:54 - New Order Processing ===
+Session customer_id: 5
+Checking/creating user record...
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status) VALUES (?,?,?)
+Fields: user_id, total_amount, status
+Values: 5, 2660, pending
+New order ID: 15
+
+=== 2025-11-03 12:17:12 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-03 12:57:43 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-03 13:12:02 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-03 16:37:22 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-03 18:10:07 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-03 18:10:46 - New Order Processing ===
+Session customer_id: 5
+Checking/creating user record...
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status) VALUES (?,?,?)
+Fields: user_id, total_amount, status
+Values: 5, 760, pending
+New order ID: 16
+
+=== 2025-11-03 18:10:50 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-11-03 18:10:53 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-11-03 18:10:54 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-11-03 18:11:16 ===
+Session customer_id: 5
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 3
+
+=== 2025-11-04 22:16:38 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 1
+
+=== 2025-11-04 22:26:03 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 1
+
+=== 2025-11-04 22:27:17 - New Order Processing ===
+Session customer_id: 4
+Checking/creating user record...
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status) VALUES (?,?,?)
+Fields: user_id, total_amount, status
+Values: 4, 550, pending
+New order ID: 17
+
+=== 2025-11-04 22:27:22 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-04 22:27:24 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-04 22:27:26 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-04 22:27:38 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-04 22:29:35 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-04 22:30:20 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ?) ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-04 22:30:27 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ?) ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-04 22:30:31 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ?) ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-04 22:57:41 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-04 22:57:47 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-04 22:57:49 ===
+Session customer_id: 4
+SQL Query: SELECT o.*, NULL as created_at, NULL as start_date, NULL as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 2
+
+=== 2025-11-05 07:26:05 - New Order Processing ===
+Session customer_id: 6
+Checking/creating user record...
+User not found in users table, creating...
+Customer data found: yes
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status,order_date) VALUES (?,?,?,?)
+Fields: user_id, total_amount, status, order_date
+Values: 6, 3198, pending, 2025-11-05 07:26:05
+New order ID: 18
+
+=== 2025-11-05 07:27:41 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 1
+
+=== 2025-11-05 07:27:47 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+           (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE o.user_id = ? 
+    ORDER BY o.id DESC
+Found orders: 1
+
+=== 2025-11-05 07:43:26 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 1
+
+=== 2025-11-05 07:48:01 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 1
+
+=== 2025-11-05 07:48:05 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 1
+
+=== 2025-11-05 07:48:55 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 1
+
+=== 2025-11-05 08:01:05 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 0
+Total orders in database: 1
+Sample order columns: id, user_id, total_amount, status, order_date, payment_status, start_date, end_date
+Sample order user_id: 6
+Sample order customer_id: NULL
+
+=== 2025-11-05 08:01:09 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 0
+Total orders in database: 1
+Sample order columns: id, user_id, total_amount, status, order_date, payment_status, start_date, end_date
+Sample order user_id: 6
+Sample order customer_id: NULL
+
+=== 2025-11-05 08:04:51 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 0
+Total orders in database: 1
+Sample order columns: id, user_id, total_amount, status, order_date, payment_status, start_date, end_date
+Sample order user_id: 6
+Sample order customer_id: NULL
+
+=== 2025-11-05 08:16:00 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 0
+Total orders in database: 1
+Sample order columns: id, user_id, total_amount, status, order_date, payment_status, start_date, end_date
+Sample order user_id: 6
+Sample order customer_id: NULL
+
+=== 2025-11-05 08:17:32 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 0
+Total orders in database: 1
+Sample order columns: id, user_id, total_amount, status, order_date, payment_status, start_date, end_date
+Sample order user_id: 6
+Sample order customer_id: NULL
+
+=== 2025-11-05 08:18:00 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 0
+Total orders in database: 1
+Sample order columns: id, user_id, total_amount, status, order_date, payment_status, start_date, end_date
+Sample order user_id: 6
+Sample order customer_id: NULL
+
+=== 2025-11-05 08:18:04 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 0
+Total orders in database: 1
+Sample order columns: id, user_id, total_amount, status, order_date, payment_status, start_date, end_date
+Sample order user_id: 6
+Sample order customer_id: NULL
+
+=== 2025-11-05 08:20:25 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 0
+Total orders in database: 1
+Sample order columns: id, user_id, total_amount, status, order_date, payment_status, start_date, end_date
+Sample order user_id: 6
+Sample order customer_id: NULL
+
+=== 2025-11-05 12:27:13 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+
+=== 2025-11-05 12:28:38 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Error occurred: Unknown column 'u.customer_id' in 'where clause'
+Transaction rolled back
+
+=== 2025-11-05 12:28:43 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Error occurred: Unknown column 'u.customer_id' in 'where clause'
+Transaction rolled back
+
+=== 2025-11-05 12:30:00 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Error occurred: Unknown column 'customer_id' in 'field list'
+Transaction rolled back
+
+=== 2025-11-05 12:44:18 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Error occurred: Unknown column 'customer_id' in 'field list'
+Transaction rolled back
+
+=== 2025-11-05 12:46:18 - New Order Processing ===
+Session customer_id: 7
+Adding customer_id column to users table...
+Verifying customer record...
+Error occurred: Unknown column 'name' in 'field list'
+Transaction rolled back
+
+=== 2025-11-05 12:57:40 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Error occurred: Duplicate entry '7' for key 'PRIMARY'
+Transaction rolled back
+
+=== 2025-11-05 13:02:47 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Error occurred: Duplicate entry '7' for key 'PRIMARY'
+Transaction rolled back
+
+=== 2025-11-05 13:02:52 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Error occurred: Duplicate entry '7' for key 'PRIMARY'
+Transaction rolled back
+
+=== 2025-11-05 13:09:27 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Error occurred: Unknown column 'type' in 'field list'
+Transaction rolled back
+
+=== 2025-11-05 13:16:07 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Error occurred: Unknown column 'type' in 'field list'
+Transaction rolled back
+
+=== 2025-11-05 13:18:21 - New Order Processing ===
+Session customer_id: 7
+Adding type column to users table...
+Verifying customer record...
+Error occurred: Duplicate entry 'richnumber931@gmail.com' for key 'email'
+Transaction rolled back
+
+=== 2025-11-05 15:25:07 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Looking for existing user by customer_id...
+Looking for existing user by email...
+Found user by email: 7
+Updated user 7 with customer_id 7
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status,order_date) VALUES (?,?,?,?)
+Fields: user_id, total_amount, status, order_date
+Values: 7, 1599, pending, 2025-11-05 15:25:10
+New order ID: 19
+
+=== 2025-11-05 15:27:32 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status,order_date) VALUES (?,?,?,?)
+Fields: user_id, total_amount, status, order_date
+Values: 7, 1599, pending, 2025-11-05 15:27:32
+New order ID: 20
+Transaction committed successfully
+Order processing completed successfully
+
+=== 2025-11-05 15:27:38 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 0
+Total orders in database: 3
+Sample order columns: id, user_id, total_amount, status, order_date, payment_status, start_date, end_date
+Sample order user_id: 6
+Sample order customer_id: NULL
+
+=== 2025-11-05 16:20:24 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Found orders: 0
+Total orders in database: 3
+Sample order columns: id, user_id, total_amount, status, order_date, payment_status, start_date, end_date
+Sample order user_id: 6
+Sample order customer_id: NULL
+
+=== 2025-11-05 16:44:40 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+
+=== 2025-11-05 16:48:13 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 7
+)
+
+
+=== 2025-11-05 16:50:12 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 7
+)
+
+
+=== 2025-11-05 16:50:52 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 7
+)
+
+
+=== 2025-11-05 16:52:41 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 7
+)
+
+
+=== 2025-11-05 16:53:00 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 7
+)
+
+
+=== 2025-11-05 17:06:45 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 7
+)
+
+
+=== 2025-11-05 17:42:07 - New Order Processing ===
+Session customer_id: 7
+Verifying customer record...
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status,order_date) VALUES (?,?,?,?)
+Fields: user_id, total_amount, status, order_date
+Values: 7, 900, pending, 2025-11-05 17:42:07
+New order ID: 21
+Transaction committed successfully
+Order processing completed successfully
+
+=== 2025-11-05 17:58:05 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 7
+)
+
+
+=== 2025-11-05 17:59:14 ===
+Session customer_id: 7
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 7
+)
+
+
+=== 2025-11-05 21:12:21 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 6
+)
+
+
+=== 2025-11-06 08:43:36 - New Order Processing ===
+Session customer_id: 6
+Verifying customer record...
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status,order_date) VALUES (?,?,?,?)
+Fields: user_id, total_amount, status, order_date
+Values: 6, 1599, pending, 2025-11-06 08:43:36
+New order ID: 22
+Transaction committed successfully
+Order processing completed successfully
+
+=== 2025-11-06 08:43:42 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 6
+)
+
+
+=== 2025-11-06 10:26:57 - New Order Processing ===
+Session customer_id: 6
+Verifying customer record...
+Order INSERT SQL: INSERT INTO orders (user_id,total_amount,status,order_date) VALUES (?,?,?,?)
+Fields: user_id, total_amount, status, order_date
+Values: 6, 5000, pending, 2025-11-06 10:26:57
+New order ID: 23
+Transaction committed successfully
+Order processing completed successfully
+
+=== 2025-11-06 10:27:08 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 6
+)
+
+
+=== 2025-11-06 10:31:07 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 6
+)
+
+
+=== 2025-11-06 11:18:44 ===
+Session customer_id: 6
+SQL Query: SELECT o.*, o.order_date as order_date, NULL as created_at, o.start_date as start_date, o.end_date as end_date, NULL as paid_at, 
+        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as item_count
+    FROM orders o 
+    WHERE (o.user_id = ? ) 
+    ORDER BY o.order_date DESC
+Binding params: types=i params=Array
+(
+    [0] => 6
+)
+

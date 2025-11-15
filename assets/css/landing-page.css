@@ -1,0 +1,70 @@
+/* landing-page.css
+	 Complementary custom styles for Tailwind-based landing page
+	 - Keep these minimal: Tailwind handles most layout
+	 - Add a few helper rules, accessibility focus outlines, and footer layout helpers
+*/
+
+:root{
+	--brand: #1b4b4b;
+	--accent: #f6c84c;
+}
+
+html, body {
+	height: 100%;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Hero helper (background set inline in HTML) */
+#hero { background-repeat: no-repeat; background-size: cover; background-position: center; }
+
+/* Ensure images using object-cover behave consistently */
+img.object-cover { object-fit: cover; display:block; }
+
+/* Card transition fallback */
+.rounded-xl { transition: transform .28s ease, box-shadow .28s ease; }
+
+/* Improve focus outlines for keyboard users */
+a:focus, button:focus, input:focus { outline: 3px solid rgba(246,200,76,0.16); outline-offset: 2px; }
+
+/* Testimonials */
+.testimonial-quote { font-style: italic; color: #374151; }
+
+/* Footer helpers to keep existing markup tidy */
+.footer-container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.25rem; display:flex; flex-wrap:wrap; gap:1.25rem; }
+.footer-logo-section { flex: 1 1 220px; }
+.footer-links { flex: 1 1 200px; }
+.footer-newsletter { flex: 1 1 260px; }
+.footer-newsletter input { padding: .5rem .75rem; border-radius: .375rem; border: 1px solid #e5e7eb; }
+.footer-newsletter button { padding: .5rem .75rem; background: var(--accent); color: var(--brand); border-radius: .375rem; font-weight: 600; }
+
+/* Social icon hover */
+.footer-socials a img { transition: transform .18s ease, opacity .18s ease; }
+.footer-socials a:hover img { transform: translateY(-3px); opacity: .95; }
+
+/* Responsive footer stack */
+@media (max-width: 768px) {
+	.footer-container { flex-direction: column; }
+}
+
+/* Small screen hero text sizing */
+@media (max-width: 640px) {
+	#hero h1 { font-size: 2.25rem; }
+	#hero p { font-size: 1rem; }
+}
+
+/* Prevent unexpected horizontal scrolls and ensure media scale nicely
+	- set a consistent box-sizing model
+	- ensure images/videos don't overflow their containers
+	- hide any tiny overflow on the x-axis as a last-resort safeguard */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+img, picture, video, iframe { max-width: 100%; height: auto; display: block; }
+
+/* A practical, low-risk safeguard for horizontal scroll caused by
+	full-bleed backgrounds or 100vw calculations. If you'd rather
+	fix a specific element, remove this and target the element instead. */
+html, body { overflow-x: hidden; margin: auto;}
+
