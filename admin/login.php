@@ -1,78 +1,77 @@
 <?php
-require_once __DIR__ . '/includes/config.php';
+session_start();
+require_once __DIR__ . '/../includes/security.php';
 
-// If already logged in, redirect to dashboard
-if (is_admin_logged_in()) {
+if (!empty($_SESSION['admin_logged_in']) && ($_SESSION['user_role'] ?? '') === 'Admin') {
     header('Location: dashboard.php');
     exit;
 }
 
-$error = '';
-
-// Handle login form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
-    
-    // Demo credentials - in production, use proper authentication
-    if ($username === 'admin' && $password === 'admin123') {
-        $_SESSION['admin_logged_in'] = true;
-        // Set a success flash message for the admin
-        if (function_exists('set_flash_message')) {
-            set_flash_message('success', 'You have successfully logged in.');
-        }
-        
-        // Redirect to stored URL or dashboard
-        $redirect = $_SESSION['redirect_after_login'] ?? 'dashboard.php';
-        unset($_SESSION['redirect_after_login']);
-        
-        header("Location: $redirect");
-        exit;
-    }
-    
-    $error = 'Invalid username or password';
-}
+$errorMessage = $_SESSION['admin_error'] ?? '';
+unset($_SESSION['admin_error']);
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - SmartRental</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login | Smart Rental</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --brand-primary: #1b4b4b;
+            --brand-accent: #facd05;
+            --bg-dark: #0f172a;
+            --card-dark: rgba(15, 23, 42, 0.92);
+        }
+    </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">SmartRental Admin</h1>
-        
-        <?php if ($error): ?>
-        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-            <?php echo htmlspecialchars($error); ?>
-        </div>
-        <?php endif; ?>
-        
-        <form method="POST" class="space-y-6">
-            <div>
-                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-                <input type="text" id="username" name="username" required
-                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+    <div class="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(250,205,5,0.15),_transparent_38%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.14),_transparent_28%)]"></div>
+
+        <div class="relative w-full max-w-md space-y-8 rounded-[2rem] border border-slate-800 bg-slate-950/95 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
+            <div class="text-center">
+                <p class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-400">Smart Rental</p>
+                <h1 class="mt-4 text-4xl font-black tracking-tight text-white">Admin Portal</h1>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Secure sign in for authorized administrators only.</p>
             </div>
-            
-            <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" id="password" name="password" required
-                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+
+            <?php if ($errorMessage !== ''): ?>
+                <div class="rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+                    <?= htmlspecialchars($errorMessage, ENT_QUOTES, 'UTF-8'); ?>
+                </div>
+            <?php endif; ?>
+
+            <form action="includes/auth.php" method="POST" class="space-y-6">
+                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(csrfToken('admin-auth'), ENT_QUOTES, 'UTF-8'); ?>">
+                <div class="rounded-3xl border border-slate-700 bg-slate-900/90 p-5 shadow-sm shadow-slate-950/30">
+                    <label for="email" class="block text-xs font-semibold uppercase tracking-[0.26em] text-slate-500">Admin Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required class="mt-3 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-[#facd05] focus:ring-2 focus:ring-[#facd05]/20" placeholder="admin@smartrental.com" />
+                </div>
+
+                <div class="rounded-3xl border border-slate-700 bg-slate-900/90 p-5 shadow-sm shadow-slate-950/30">
+                    <label for="password" class="block text-xs font-semibold uppercase tracking-[0.26em] text-slate-500">Password</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password" required class="mt-3 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-[#facd05] focus:ring-2 focus:ring-[#facd05]/20" placeholder="Enter your password" />
+                    <p class="mt-2 text-xs text-slate-500">A one-time verification code will be sent to your email after sign-in.</p>
+                </div>
+
+                <input type="hidden" name="admin_login" value="1">
+                <button type="submit" class="w-full rounded-3xl bg-gradient-to-r from-[#1b4b4b] via-slate-800 to-[#143a3a] px-5 py-3 text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-lg shadow-slate-950/30 transition hover:from-[#143a3a] hover:to-[#1b4b4b]">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="rounded-3xl border border-slate-700 bg-slate-900/90 p-5 text-center text-sm text-slate-400">
+                <p class="font-semibold text-slate-100">Admin Access</p>
+                <p class="mt-2">Manage bookings, fleet, payouts, compliance, and system insights from one secure console.</p>
             </div>
-            
-            <button type="submit"
-                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
-                Sign In
-            </button>
-        </form>
-        
-        <div class="mt-4 text-center text-sm text-gray-600">
-            &copy; <?php echo date('Y'); ?> SmartRental. All rights reserved.
+
+            <div class="text-center">
+                <a href="../customer-landing.php" class="text-sm font-semibold text-[#facd05] transition hover:text-white">Back to Main Site</a>
+            </div>
         </div>
     </div>
+    <script src="js/admin-app.js" defer></script>
 </body>
 </html>

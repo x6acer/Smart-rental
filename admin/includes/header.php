@@ -1,81 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($page_title) ? $page_title . ' - ' : ''; ?>SmartRental Admin</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="../assets/css/tailwind.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
-    <style>
-        .sidebar {
-            transition: transform 0.3s ease-in-out;
-        }
-        @media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
-            }
-            .sidebar.show {
-                transform: translateX(0);
-            }
-        }
-    </style>
-</head>
-<body class="bg-gray-200">
-    <div class="min-h-screen">
-        <div class="flex">
-            <?php require_once 'sidebar.php'; ?>
-            <div class="flex-1 transition-all duration-300 ease-in-out lg:ml-[290px]">
-                <header class="sticky top-0 flex bg-white border-b border-gray-200 z-50">
-                    <div class="flex flex-col items-center justify-between flex-grow lg:flex-row lg:px-6">
-                        <div class="w-full lg:w-auto px-4 py-3">
-                            <form>
-                                <div class="relative">
-                                    <span class="absolute -translate-y-1/2 pointer-events-none left-4 top-1/2">
-                                        <svg class="fill-gray-500" width="15" height="15" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.04175 9.37363C3.04175 5.87693 5.87711 3.04199 9.37508 3.04199C12.8731 3.04199 15.7084 5.87693 15.7084 9.37363C15.7084 12.8703 12.8731 15.7053 9.37508 15.7053C5.87711 15.7053 3.04175 12.8703 3.04175 9.37363ZM9.37508 1.54199C5.04902 1.54199 1.54175 5.04817 1.54175 9.37363C1.54175 13.6991 5.04902 17.2053 9.37508 17.2053C11.2674 17.2053 13.003 16.5344 14.357 15.4176L17.177 18.238C17.4699 18.5309 17.9448 18.5309 18.2377 18.238C18.5306 17.9451 18.5306 17.4703 18.2377 17.1774L15.418 14.3573C16.5365 13.0033 17.2084 11.2669 17.2084 9.37363C17.2084 5.04817 13.7011 1.54199 9.37508 1.54199Z" fill=""/>
-                                        </svg>
-                                    </span>
-                                    <input type="text" class="h-8 w-full rounded-lg border border-gray-200 bg-transparent py-2.5 pl-10 pr-10 text-sm text-gray-800 shadow-sm placeholder:text-gray-400 focus:border-purple-300 focus:outline-none focus:ring focus:ring-purple-500/10 xl:w-[430px]" placeholder="Search here..." />
-                                </div>
-                            </form>
-                        </div>
+<?php
+if (!isset($pageTitle)) {
+    $pageTitle = 'Admin Workspace';
+}
+if (!isset($pageSubtitle)) {
+    $pageSubtitle = 'Operational overview';
+}
+if (!isset($headerBadge)) {
+    $headerBadge = 'READY';
+}
+if (!isset($headerAction)) {
+    $headerAction = null;
+}
+if (!isset($headerSearchPlaceholder)) {
+    $headerSearchPlaceholder = 'Search workspace';
+}
+if (!isset($headerSearchValue)) {
+    $headerSearchValue = '';
+}
+if (!isset($showSearch)) {
+    $showSearch = false;
+}
+if (!isset($showStatusBadge)) {
+    $showStatusBadge = true;
+}
+if (!isset($profileName)) {
+    $profileName = 'Muniru Mohammed';
+}
+if (!isset($profileRole)) {
+    $profileRole = 'Super Admin Access';
+}
+if (!isset($profileInitials)) {
+    $profileInitials = 'MM';
+}
+?>
 
-                        <div class="px-4 py-3">
-                            <div class="relative flex items-center gap-3">
-                                <button class="flex items-center text-gray-700">
-                                    <span class="m-1 overflow-hidden rounded-full h-10 w-10">
-                                        <img src="../assets/images/myimage.jpg" alt="User" />
-                                    </span>
-                                    <span class="block mr-1 font-medium text-sm">Administrator</span>
-                                </button>
-                                <a href="logout.php" class="ml-2 bg-purple-600 text-white px-3 py-2 rounded text-sm font-semibold">Logout</a>
-                            </div>
-                        </div>
-                    </div>
-                </header>
+<style>
+    /* Small animation for admin alerts: used by admin-app.js -> animate-slideIn */
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-8px) scale(0.995);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
 
-                <section class="min-h-screen bg-gray-100">
-                    <main class="p-6 mx-auto max-w-screen-2xl">
-                        <?php if (isset($error) && $error): ?>
-                        <div class="mb-4">
-                            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded" role="alert">
-                                <span class="block sm:inline"><?php echo htmlspecialchars($error); ?></span>
-                            </div>
-                        </div>
-                        <?php endif; ?>
-                        <?php
-                        
-                        if (function_exists('get_flash_message')) {
-                            $flash = get_flash_message();
-                            if ($flash) {
-                                $type = $flash['type'] ?? 'info';
-                                $msg = $flash['message'] ?? '';
-                                $bg = 'bg-blue-100 text-blue-700 border-blue-200';
-                                if ($type === 'success') { $bg = 'bg-green-100 text-green-700 border-green-200'; }
-                                if ($type === 'error' || $type === 'danger') { $bg = 'bg-red-100 text-red-700 border-red-400'; }
-                                echo '<div class="mb-4"><div class="'.$bg.' border px-4 py-3 rounded" role="alert">'.htmlspecialchars($msg).'</div></div>';
-                            }
-                        }
-                        ?>
+    .animate-slideIn {
+        animation: slideIn .32s cubic-bezier(.2,.9,.2,1) both;
+    }
+
+    /* Reusable empty-state card for admin UI */
+    .empty-state {
+        border: 1px dashed rgba(148,163,184,0.18);
+        background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(249,250,251,0.9));
+        padding: 1.25rem 1.5rem;
+        border-radius: 0.75rem;
+        text-align: center;
+        color: #6b7280;
+    }
+    .empty-state .es-icon { font-size: 1.5rem; margin-bottom: 0.5rem; opacity: .9; }
+</style>
+
+<header class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-200/80 z-40 px-8 h-20 flex justify-between items-center">
+    <div>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400"><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></h2>
+        <p class="text-xs text-slate-500 mt-0.5"><?= htmlspecialchars($pageSubtitle, ENT_QUOTES, 'UTF-8'); ?></p>
+    </div>
+
+    <div class="flex items-center gap-6">
+        <?php if ($showStatusBadge): ?>
+            <div class="flex items-center gap-2 text-[10px] font-bold uppercase text-emerald-600 bg-emerald-50 border border-emerald-100 px-3 py-1 rounded-full">
+                <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+                Gateway Online
+            </div>
+        <?php endif; ?>
+
+        <?php if (!empty($headerBadge)): ?>
+            <div class="flex items-center gap-2 text-[10px] font-bold uppercase text-slate-700 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">
+                <?= htmlspecialchars($headerBadge, ENT_QUOTES, 'UTF-8'); ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($showSearch): ?>
+            <form method="get" action="<?= htmlspecialchars(basename($_SERVER['PHP_SELF']), ENT_QUOTES, 'UTF-8'); ?>" class="relative hidden md:block">
+                <input type="text" name="q" value="<?= htmlspecialchars($headerSearchValue, ENT_QUOTES, 'UTF-8'); ?>" placeholder="<?= htmlspecialchars($headerSearchPlaceholder, ENT_QUOTES, 'UTF-8'); ?>" class="w-72 pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#1b4b4b]" />
+                <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </form>
+        <?php endif; ?>
+
+        <?php if ($headerAction !== null): ?>
+            <div class="hidden md:block">
+                <?= $headerAction; ?>
+            </div>
+        <?php endif; ?>
+
+        <div class="flex items-center gap-3 border-l pl-6 border-slate-200">
+            <div class="text-right">
+                <p class="text-xs font-bold text-slate-800"><?= htmlspecialchars($profileName, ENT_QUOTES, 'UTF-8'); ?></p>
+                <p class="text-[9px] text-slate-400 font-extrabold uppercase tracking-wide"><?= htmlspecialchars($profileRole, ENT_QUOTES, 'UTF-8'); ?></p>
+            </div>
+            <div class="w-10 h-10 bg-[#1b4b4b] rounded-xl flex items-center justify-center text-[#facd05] font-bold text-sm shadow-sm"><?= htmlspecialchars($profileInitials, ENT_QUOTES, 'UTF-8'); ?></div>
+        </div>
+    </div>
+</header>
